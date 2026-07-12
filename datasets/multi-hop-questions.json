@@ -1,0 +1,122 @@
+[
+  {
+    "id": "mh-01",
+    "question": "Which sellers in US are eligible for Growth, and what fee applies?",
+    "reference": "Northstar Goods, Cedar Lane, Desert Bloom, Pacific Loom are eligible for Growth in US; the applicable fee is 2.5%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-02",
+    "question": "Which sellers in CA are eligible for Growth, and what fee applies?",
+    "reference": "Maple Works is eligible for Growth in CA; the applicable fee is 2.5%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-03",
+    "question": "Which sellers in UK are eligible for Growth, and what fee applies?",
+    "reference": "Thames Studio, Borough Home are eligible for Growth in UK; the applicable fee is 2.5%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-04",
+    "question": "Which sellers in DE are eligible for Growth, and what fee applies?",
+    "reference": "Rhine Supply, Alpine Form are eligible for Growth in DE; the applicable fee is 2.5%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-05",
+    "question": "Which sellers in JP are eligible for Growth, and what fee applies?",
+    "reference": "Kumo Market is eligible for Growth in JP; the applicable fee is 2.5%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-06",
+    "question": "Which sellers in US are eligible for Export, and what fee applies?",
+    "reference": "Northstar Goods, Pacific Loom are eligible for Export in US; the applicable fee is 4%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-07",
+    "question": "Which sellers in CA are eligible for Export, and what fee applies?",
+    "reference": "Maple Works, Harbor Craft are eligible for Export in CA; the applicable fee is 4%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-08",
+    "question": "Which sellers in UK are eligible for Export, and what fee applies?",
+    "reference": "Thames Studio is eligible for Export in UK; the applicable fee is 4%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-09",
+    "question": "Which sellers in DE are eligible for Export, and what fee applies?",
+    "reference": "Rhine Supply, Alpine Form are eligible for Export in DE; the applicable fee is 4%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-10",
+    "question": "Which sellers in JP are eligible for Export, and what fee applies?",
+    "reference": "Kumo Market, Sakura Tools are eligible for Export in JP; the applicable fee is 4%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-11",
+    "question": "Which sellers in US are eligible for Launch, and what fee applies?",
+    "reference": "Cedar Lane, Desert Bloom are eligible for Launch in US; the applicable fee is $29.",
+    "hops": 3
+  },
+  {
+    "id": "mh-12",
+    "question": "Which sellers in CA are eligible for Launch, and what fee applies?",
+    "reference": "Harbor Craft is eligible for Launch in CA; the applicable fee is $29.",
+    "hops": 3
+  },
+  {
+    "id": "mh-13",
+    "question": "Which sellers in UK are eligible for Launch, and what fee applies?",
+    "reference": "Borough Home is eligible for Launch in UK; the applicable fee is $29.",
+    "hops": 3
+  },
+  {
+    "id": "mh-14",
+    "question": "Which sellers in DE are eligible for Launch, and what fee applies?",
+    "reference": "Insufficient data in the governed seller graph.",
+    "hops": 3
+  },
+  {
+    "id": "mh-15",
+    "question": "Which sellers in JP are eligible for Launch, and what fee applies?",
+    "reference": "Sakura Tools is eligible for Launch in JP; the applicable fee is $29.",
+    "hops": 3
+  },
+  {
+    "id": "mh-16",
+    "question": "Which sellers in US are eligible for Premium, and what fee applies?",
+    "reference": "Northstar Goods, Pacific Loom are eligible for Premium in US; the applicable fee is 6%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-17",
+    "question": "Which sellers in CA are eligible for Premium, and what fee applies?",
+    "reference": "Insufficient data in the governed seller graph.",
+    "hops": 3
+  },
+  {
+    "id": "mh-18",
+    "question": "Which sellers in UK are eligible for Premium, and what fee applies?",
+    "reference": "Thames Studio is eligible for Premium in UK; the applicable fee is 6%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-19",
+    "question": "Which sellers in DE are eligible for Premium, and what fee applies?",
+    "reference": "Alpine Form is eligible for Premium in DE; the applicable fee is 6%.",
+    "hops": 3
+  },
+  {
+    "id": "mh-20",
+    "question": "Which sellers in JP are eligible for Premium, and what fee applies?",
+    "reference": "Kumo Market is eligible for Premium in JP; the applicable fee is 6%.",
+    "hops": 3
+  }
+]

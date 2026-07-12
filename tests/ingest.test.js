@@ -1,0 +1,3 @@
+import test from "node:test"; import assert from "node:assert/strict";
+import source from "../datasets/seller-source.json" with {type:"json"}; import {projectSeed} from "../src/project-seed.js"; import {ingestGraph} from "../src/ingest.js";
+test("ingestion uses bounded UNWIND batches and tenant-scoped merges",async()=>{const calls=[];const session={run:async(cypher,params)=>calls.push({cypher,params})};const {graph}=projectSeed(source);const counts=await ingestGraph(session,graph,{batch_size:10});assert.equal(counts.sellers,12);assert.ok(calls.every(c=>/UNWIND/.test(c.cypher)&&/tenant_id/.test(c.cypher)));assert.equal(calls.flatMap(c=>c.params.rows).length,graph.nodes.length+graph.relationships.length);});

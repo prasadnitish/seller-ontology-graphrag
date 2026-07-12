@@ -1,0 +1,13 @@
+{
+  "evidence_level": "virtual million-node cardinality plus 10,000 in-process cache/read operations",
+  "virtual_node_cardinality": 1000000,
+  "operations": 10000,
+  "p95_operation_ms": 0.0006,
+  "tenant_crossovers": 0,
+  "cache_invalidations": 100,
+  "conflict_recovery_rate_pct": 100,
+  "dead_letters": 0,
+  "limitations": [
+    "Neo4j was not available, so this is control-plane capacity evidence, not database latency."
+  ]
+}

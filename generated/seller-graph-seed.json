@@ -1,0 +1,719 @@
+{
+  "nodes": [
+    {
+      "label": "Seller",
+      "id": "s-01",
+      "name": "Northstar Goods",
+      "tier": "gold",
+      "region_id": "us",
+      "program_ids": [
+        "growth",
+        "export",
+        "premium"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-02",
+      "name": "Maple Works",
+      "tier": "silver",
+      "region_id": "ca",
+      "program_ids": [
+        "growth",
+        "export"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-03",
+      "name": "Thames Studio",
+      "tier": "gold",
+      "region_id": "uk",
+      "program_ids": [
+        "growth",
+        "export",
+        "premium"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-04",
+      "name": "Rhine Supply",
+      "tier": "silver",
+      "region_id": "de",
+      "program_ids": [
+        "growth",
+        "export"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-05",
+      "name": "Kumo Market",
+      "tier": "gold",
+      "region_id": "jp",
+      "program_ids": [
+        "growth",
+        "export",
+        "premium"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-06",
+      "name": "Cedar Lane",
+      "tier": "bronze",
+      "region_id": "us",
+      "program_ids": [
+        "launch",
+        "growth"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-07",
+      "name": "Harbor Craft",
+      "tier": "silver",
+      "region_id": "ca",
+      "program_ids": [
+        "launch",
+        "export"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-08",
+      "name": "Borough Home",
+      "tier": "bronze",
+      "region_id": "uk",
+      "program_ids": [
+        "launch",
+        "growth"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-09",
+      "name": "Alpine Form",
+      "tier": "gold",
+      "region_id": "de",
+      "program_ids": [
+        "growth",
+        "export",
+        "premium"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-10",
+      "name": "Sakura Tools",
+      "tier": "silver",
+      "region_id": "jp",
+      "program_ids": [
+        "launch",
+        "export"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-11",
+      "name": "Desert Bloom",
+      "tier": "bronze",
+      "region_id": "us",
+      "program_ids": [
+        "launch",
+        "growth"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Seller",
+      "id": "s-12",
+      "name": "Pacific Loom",
+      "tier": "gold",
+      "region_id": "us",
+      "program_ids": [
+        "growth",
+        "export",
+        "premium"
+      ],
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Program",
+      "id": "growth",
+      "name": "Growth",
+      "policy_id": "p-growth",
+      "fee_id": "f-growth",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Program",
+      "id": "export",
+      "name": "Export",
+      "policy_id": "p-export",
+      "fee_id": "f-export",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Program",
+      "id": "launch",
+      "name": "Launch",
+      "policy_id": "p-launch",
+      "fee_id": "f-launch",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Program",
+      "id": "premium",
+      "name": "Premium",
+      "policy_id": "p-premium",
+      "fee_id": "f-premium",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Policy",
+      "id": "p-growth",
+      "name": "Growth Policy",
+      "waiver_rule": "r-1",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Policy",
+      "id": "p-export",
+      "name": "Export Policy",
+      "waiver_rule": "r-4",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Policy",
+      "id": "p-launch",
+      "name": "Launch Policy",
+      "waiver_rule": "r-2",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Policy",
+      "id": "p-premium",
+      "name": "Premium Policy",
+      "waiver_rule": "r-3",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Policy",
+      "id": "p-small",
+      "name": "Small Seller Policy",
+      "waiver_rule": "r-5",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Policy",
+      "id": "p-migrate",
+      "name": "Migration Policy",
+      "waiver_rule": "r-6",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Region",
+      "id": "us",
+      "code": "US",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Region",
+      "id": "ca",
+      "code": "CA",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Region",
+      "id": "uk",
+      "code": "UK",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Region",
+      "id": "de",
+      "code": "DE",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Region",
+      "id": "jp",
+      "code": "JP",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Fee",
+      "id": "f-growth",
+      "type": "referral",
+      "amount": "2.5%",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Fee",
+      "id": "f-export",
+      "type": "cross-border",
+      "amount": "4%",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Fee",
+      "id": "f-launch",
+      "type": "subscription",
+      "amount": "$29",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "Fee",
+      "id": "f-premium",
+      "type": "service",
+      "amount": "6%",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "EligibilityRule",
+      "id": "r-1",
+      "condition": "annual sales above $100k",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "EligibilityRule",
+      "id": "r-2",
+      "condition": "first 90 days",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "EligibilityRule",
+      "id": "r-3",
+      "condition": "veteran-owned business",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "EligibilityRule",
+      "id": "r-4",
+      "condition": "sustainable packaging",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "EligibilityRule",
+      "id": "r-5",
+      "condition": "sales below $50k",
+      "tenant_id": "demo"
+    },
+    {
+      "label": "EligibilityRule",
+      "id": "r-6",
+      "condition": "marketplace migration",
+      "tenant_id": "demo"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "s-01",
+      "type": "APPLIES_IN",
+      "to": "us",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-01",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-01",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-01",
+      "type": "ELIGIBLE_FOR",
+      "to": "premium",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-02",
+      "type": "APPLIES_IN",
+      "to": "ca",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-02",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-02",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-03",
+      "type": "APPLIES_IN",
+      "to": "uk",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-03",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-03",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-03",
+      "type": "ELIGIBLE_FOR",
+      "to": "premium",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-04",
+      "type": "APPLIES_IN",
+      "to": "de",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-04",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-04",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-05",
+      "type": "APPLIES_IN",
+      "to": "jp",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-05",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-05",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-05",
+      "type": "ELIGIBLE_FOR",
+      "to": "premium",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-06",
+      "type": "APPLIES_IN",
+      "to": "us",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-06",
+      "type": "ELIGIBLE_FOR",
+      "to": "launch",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-06",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-07",
+      "type": "APPLIES_IN",
+      "to": "ca",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-07",
+      "type": "ELIGIBLE_FOR",
+      "to": "launch",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-07",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-08",
+      "type": "APPLIES_IN",
+      "to": "uk",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-08",
+      "type": "ELIGIBLE_FOR",
+      "to": "launch",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-08",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-09",
+      "type": "APPLIES_IN",
+      "to": "de",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-09",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-09",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-09",
+      "type": "ELIGIBLE_FOR",
+      "to": "premium",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-10",
+      "type": "APPLIES_IN",
+      "to": "jp",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-10",
+      "type": "ELIGIBLE_FOR",
+      "to": "launch",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-10",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-11",
+      "type": "APPLIES_IN",
+      "to": "us",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-11",
+      "type": "ELIGIBLE_FOR",
+      "to": "launch",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-11",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-12",
+      "type": "APPLIES_IN",
+      "to": "us",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-12",
+      "type": "ELIGIBLE_FOR",
+      "to": "growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-12",
+      "type": "ELIGIBLE_FOR",
+      "to": "export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "s-12",
+      "type": "ELIGIBLE_FOR",
+      "to": "premium",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "growth",
+      "type": "GOVERNED_BY",
+      "to": "p-growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "growth",
+      "type": "CHARGES",
+      "to": "f-growth",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "export",
+      "type": "GOVERNED_BY",
+      "to": "p-export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "export",
+      "type": "CHARGES",
+      "to": "f-export",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "launch",
+      "type": "GOVERNED_BY",
+      "to": "p-launch",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "launch",
+      "type": "CHARGES",
+      "to": "f-launch",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "premium",
+      "type": "GOVERNED_BY",
+      "to": "p-premium",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "premium",
+      "type": "CHARGES",
+      "to": "f-premium",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "p-growth",
+      "type": "WAIVED_BY",
+      "to": "r-1",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "p-export",
+      "type": "WAIVED_BY",
+      "to": "r-4",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "p-launch",
+      "type": "WAIVED_BY",
+      "to": "r-2",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "p-premium",
+      "type": "WAIVED_BY",
+      "to": "r-3",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "p-small",
+      "type": "WAIVED_BY",
+      "to": "r-5",
+      "tenant_id": "demo"
+    },
+    {
+      "from": "p-migrate",
+      "type": "WAIVED_BY",
+      "to": "r-6",
+      "tenant_id": "demo"
+    }
+  ],
+  "fact_sentences": [
+    "Northstar Goods applies in US.",
+    "Northstar Goods is eligible for Growth.",
+    "Northstar Goods is eligible for Export.",
+    "Northstar Goods is eligible for Premium.",
+    "Maple Works applies in CA.",
+    "Maple Works is eligible for Growth.",
+    "Maple Works is eligible for Export.",
+    "Thames Studio applies in UK.",
+    "Thames Studio is eligible for Growth.",
+    "Thames Studio is eligible for Export.",
+    "Thames Studio is eligible for Premium.",
+    "Rhine Supply applies in DE.",
+    "Rhine Supply is eligible for Growth.",
+    "Rhine Supply is eligible for Export.",
+    "Kumo Market applies in JP.",
+    "Kumo Market is eligible for Growth.",
+    "Kumo Market is eligible for Export.",
+    "Kumo Market is eligible for Premium.",
+    "Cedar Lane applies in US.",
+    "Cedar Lane is eligible for Launch.",
+    "Cedar Lane is eligible for Growth.",
+    "Harbor Craft applies in CA.",
+    "Harbor Craft is eligible for Launch.",
+    "Harbor Craft is eligible for Export.",
+    "Borough Home applies in UK.",
+    "Borough Home is eligible for Launch.",
+    "Borough Home is eligible for Growth.",
+    "Alpine Form applies in DE.",
+    "Alpine Form is eligible for Growth.",
+    "Alpine Form is eligible for Export.",
+    "Alpine Form is eligible for Premium.",
+    "Sakura Tools applies in JP.",
+    "Sakura Tools is eligible for Launch.",
+    "Sakura Tools is eligible for Export.",
+    "Desert Bloom applies in US.",
+    "Desert Bloom is eligible for Launch.",
+    "Desert Bloom is eligible for Growth.",
+    "Pacific Loom applies in US.",
+    "Pacific Loom is eligible for Growth.",
+    "Pacific Loom is eligible for Export.",
+    "Pacific Loom is eligible for Premium.",
+    "Growth is governed by Growth Policy.",
+    "Growth charges a referral fee of 2.5%.",
+    "Export is governed by Export Policy.",
+    "Export charges a cross-border fee of 4%.",
+    "Launch is governed by Launch Policy.",
+    "Launch charges a subscription fee of $29.",
+    "Premium is governed by Premium Policy.",
+    "Premium charges a service fee of 6%.",
+    "Growth Policy is waived when annual sales above $100k.",
+    "Export Policy is waived when sustainable packaging.",
+    "Launch Policy is waived when first 90 days.",
+    "Premium Policy is waived when veteran-owned business.",
+    "Small Seller Policy is waived when sales below $50k.",
+    "Migration Policy is waived when marketplace migration."
+  ],
+  "counts": {
+    "sellers": 12,
+    "programs": 4,
+    "policies": 6,
+    "regions": 5,
+    "fees": 4,
+    "rules": 6,
+    "relationships": 55
+  }
+}

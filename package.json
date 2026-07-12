@@ -1,0 +1,1 @@
+{"name":"seller-ontology-graphrag","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node --test tests/*.test.js","project":"node src/project-seed.js","evaluate":"node eval/graphrag-vs-vectorrag.js","load":"node eval/load-conflict.js"},"engines":{"node":">=20"}}

@@ -1,0 +1,26 @@
+{
+  "tenant_id":"demo",
+  "regions":[{"id":"us","code":"US"},{"id":"ca","code":"CA"},{"id":"uk","code":"UK"},{"id":"de","code":"DE"},{"id":"jp","code":"JP"}],
+  "fees":[{"id":"f-growth","type":"referral","amount":"2.5%"},{"id":"f-export","type":"cross-border","amount":"4%"},{"id":"f-launch","type":"subscription","amount":"$29"},{"id":"f-premium","type":"service","amount":"6%"}],
+  "rules":[{"id":"r-1","condition":"annual sales above $100k"},{"id":"r-2","condition":"first 90 days"},{"id":"r-3","condition":"veteran-owned business"},{"id":"r-4","condition":"sustainable packaging"},{"id":"r-5","condition":"sales below $50k"},{"id":"r-6","condition":"marketplace migration"}],
+  "policies":[
+    {"id":"p-growth","name":"Growth Policy","waiver_rule":"r-1"},{"id":"p-export","name":"Export Policy","waiver_rule":"r-4"},{"id":"p-launch","name":"Launch Policy","waiver_rule":"r-2"},{"id":"p-premium","name":"Premium Policy","waiver_rule":"r-3"},{"id":"p-small","name":"Small Seller Policy","waiver_rule":"r-5"},{"id":"p-migrate","name":"Migration Policy","waiver_rule":"r-6"}
+  ],
+  "programs":[
+    {"id":"growth","name":"Growth","policy_id":"p-growth","fee_id":"f-growth"},{"id":"export","name":"Export","policy_id":"p-export","fee_id":"f-export"},{"id":"launch","name":"Launch","policy_id":"p-launch","fee_id":"f-launch"},{"id":"premium","name":"Premium","policy_id":"p-premium","fee_id":"f-premium"}
+  ],
+  "sellers":[
+    {"id":"s-01","name":"Northstar Goods","tier":"gold","region_id":"us","program_ids":["growth","export","premium"]},
+    {"id":"s-02","name":"Maple Works","tier":"silver","region_id":"ca","program_ids":["growth","export"]},
+    {"id":"s-03","name":"Thames Studio","tier":"gold","region_id":"uk","program_ids":["growth","export","premium"]},
+    {"id":"s-04","name":"Rhine Supply","tier":"silver","region_id":"de","program_ids":["growth","export"]},
+    {"id":"s-05","name":"Kumo Market","tier":"gold","region_id":"jp","program_ids":["growth","export","premium"]},
+    {"id":"s-06","name":"Cedar Lane","tier":"bronze","region_id":"us","program_ids":["launch","growth"]},
+    {"id":"s-07","name":"Harbor Craft","tier":"silver","region_id":"ca","program_ids":["launch","export"]},
+    {"id":"s-08","name":"Borough Home","tier":"bronze","region_id":"uk","program_ids":["launch","growth"]},
+    {"id":"s-09","name":"Alpine Form","tier":"gold","region_id":"de","program_ids":["growth","export","premium"]},
+    {"id":"s-10","name":"Sakura Tools","tier":"silver","region_id":"jp","program_ids":["launch","export"]},
+    {"id":"s-11","name":"Desert Bloom","tier":"bronze","region_id":"us","program_ids":["launch","growth"]},
+    {"id":"s-12","name":"Pacific Loom","tier":"gold","region_id":"us","program_ids":["growth","export","premium"]}
+  ]
+}
