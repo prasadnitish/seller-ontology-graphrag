@@ -1,0 +1,2400 @@
+{
+  "graph_name": "Seller Policy Graph",
+  "graph_version": "1.0.0",
+  "ontology_hash": "3df05d1d0e17434b0c749a04630924022d0632c78bbe91476426e7e0928b8fb1",
+  "data_hash": "19197fa8dd42882997fb64adba93c81e80b990f0dc71ef1644cea82036014c68",
+  "nodes": [
+    {
+      "id": "Region:US",
+      "type": "Region",
+      "tenant_id": "demo",
+      "properties": {
+        "code": "US",
+        "name": "United States"
+      },
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Region:CA",
+      "type": "Region",
+      "tenant_id": "demo",
+      "properties": {
+        "code": "CA",
+        "name": "Canada"
+      },
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Region:UK",
+      "type": "Region",
+      "tenant_id": "demo",
+      "properties": {
+        "code": "UK",
+        "name": "United Kingdom"
+      },
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Region:DE",
+      "type": "Region",
+      "tenant_id": "demo",
+      "properties": {
+        "code": "DE",
+        "name": "Germany"
+      },
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Region:JP",
+      "type": "Region",
+      "tenant_id": "demo",
+      "properties": {
+        "code": "JP",
+        "name": "Japan"
+      },
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Fee:f-growth",
+      "type": "Fee",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "f-growth",
+        "type": "referral",
+        "amount": "2.5%"
+      },
+      "provenance": {
+        "source_id": "fees",
+        "source_path": "fees.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Fee:f-export",
+      "type": "Fee",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "f-export",
+        "type": "cross-border",
+        "amount": "4%"
+      },
+      "provenance": {
+        "source_id": "fees",
+        "source_path": "fees.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Fee:f-launch",
+      "type": "Fee",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "f-launch",
+        "type": "subscription",
+        "amount": "$29"
+      },
+      "provenance": {
+        "source_id": "fees",
+        "source_path": "fees.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Fee:f-premium",
+      "type": "Fee",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "f-premium",
+        "type": "service",
+        "amount": "6%"
+      },
+      "provenance": {
+        "source_id": "fees",
+        "source_path": "fees.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "EligibilityRule:r-1",
+      "type": "EligibilityRule",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "r-1",
+        "condition": "annual sales above $100k"
+      },
+      "provenance": {
+        "source_id": "rules",
+        "source_path": "rules.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "EligibilityRule:r-2",
+      "type": "EligibilityRule",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "r-2",
+        "condition": "first 90 days"
+      },
+      "provenance": {
+        "source_id": "rules",
+        "source_path": "rules.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "EligibilityRule:r-3",
+      "type": "EligibilityRule",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "r-3",
+        "condition": "veteran-owned business"
+      },
+      "provenance": {
+        "source_id": "rules",
+        "source_path": "rules.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "EligibilityRule:r-4",
+      "type": "EligibilityRule",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "r-4",
+        "condition": "sustainable packaging"
+      },
+      "provenance": {
+        "source_id": "rules",
+        "source_path": "rules.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Policy:p-growth",
+      "type": "Policy",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "p-growth",
+        "name": "Growth Policy"
+      },
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Policy:p-export",
+      "type": "Policy",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "p-export",
+        "name": "Export Policy"
+      },
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Policy:p-launch",
+      "type": "Policy",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "p-launch",
+        "name": "Launch Policy"
+      },
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Policy:p-premium",
+      "type": "Policy",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "p-premium",
+        "name": "Premium Policy"
+      },
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Program:growth",
+      "type": "Program",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "growth",
+        "name": "Growth"
+      },
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Program:export",
+      "type": "Program",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "export",
+        "name": "Export"
+      },
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Program:launch",
+      "type": "Program",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "launch",
+        "name": "Launch"
+      },
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Program:premium",
+      "type": "Program",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "premium",
+        "name": "Premium"
+      },
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-01",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-01",
+        "name": "Northstar Goods",
+        "tier": "gold"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-02",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-02",
+        "name": "Maple Works",
+        "tier": "silver"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-03",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-03",
+        "name": "Thames Studio",
+        "tier": "gold"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-04",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-04",
+        "name": "Rhine Supply",
+        "tier": "silver"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-05",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-05",
+        "name": "Kumo Market",
+        "tier": "gold"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-06",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-06",
+        "name": "Cedar Lane",
+        "tier": "bronze"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:6",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-07",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-07",
+        "name": "Harbor Craft",
+        "tier": "silver"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:7",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-08",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-08",
+        "name": "Borough Home",
+        "tier": "bronze"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:8",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-09",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-09",
+        "name": "Alpine Form",
+        "tier": "gold"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:9",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-10",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-10",
+        "name": "Sakura Tools",
+        "tier": "silver"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:10",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-11",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-11",
+        "name": "Desert Bloom",
+        "tier": "bronze"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:11",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Seller:s-12",
+      "type": "Seller",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "s-12",
+        "name": "Pacific Loom",
+        "tier": "gold"
+      },
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:12",
+        "quote": null,
+        "confidence": null
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "APPLIES_IN:Seller:s-01:Region:US:1",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-01",
+      "to_id": "Region:US",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-02:Region:CA:2",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-02",
+      "to_id": "Region:CA",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-03:Region:UK:3",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-03",
+      "to_id": "Region:UK",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-04:Region:DE:4",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-04",
+      "to_id": "Region:DE",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-05:Region:JP:5",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-05",
+      "to_id": "Region:JP",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-06:Region:US:6",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-06",
+      "to_id": "Region:US",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:6",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-07:Region:CA:7",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-07",
+      "to_id": "Region:CA",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:7",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-08:Region:UK:8",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-08",
+      "to_id": "Region:UK",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:8",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-09:Region:DE:9",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-09",
+      "to_id": "Region:DE",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:9",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-10:Region:JP:10",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-10",
+      "to_id": "Region:JP",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:10",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-11:Region:US:11",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-11",
+      "to_id": "Region:US",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:11",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "APPLIES_IN:Seller:s-12:Region:US:12",
+      "type": "APPLIES_IN",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-12",
+      "to_id": "Region:US",
+      "properties": {},
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:12",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-01:Program:growth:1",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-01",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-01:Program:export:2",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-01",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-01:Program:premium:3",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-01",
+      "to_id": "Program:premium",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-02:Program:growth:4",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-02",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-02:Program:export:5",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-02",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-03:Program:growth:6",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-03",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:6",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-03:Program:export:7",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-03",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:7",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-03:Program:premium:8",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-03",
+      "to_id": "Program:premium",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:8",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-04:Program:growth:9",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-04",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:9",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-04:Program:export:10",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-04",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:10",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-05:Program:growth:11",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-05",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:11",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-05:Program:export:12",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-05",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:12",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-05:Program:premium:13",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-05",
+      "to_id": "Program:premium",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:13",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-06:Program:launch:14",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-06",
+      "to_id": "Program:launch",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:14",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-06:Program:growth:15",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-06",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:15",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-07:Program:launch:16",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-07",
+      "to_id": "Program:launch",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:16",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-07:Program:export:17",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-07",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:17",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-08:Program:launch:18",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-08",
+      "to_id": "Program:launch",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:18",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-08:Program:growth:19",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-08",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:19",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-09:Program:growth:20",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-09",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:20",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-09:Program:export:21",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-09",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:21",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-09:Program:premium:22",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-09",
+      "to_id": "Program:premium",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:22",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-10:Program:launch:23",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-10",
+      "to_id": "Program:launch",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:23",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-10:Program:export:24",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-10",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:24",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-11:Program:launch:25",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-11",
+      "to_id": "Program:launch",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:25",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-11:Program:growth:26",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-11",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:26",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-12:Program:growth:27",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-12",
+      "to_id": "Program:growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:27",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-12:Program:export:28",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-12",
+      "to_id": "Program:export",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:28",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "ELIGIBLE_FOR:Seller:s-12:Program:premium:29",
+      "type": "ELIGIBLE_FOR",
+      "tenant_id": "demo",
+      "from_id": "Seller:s-12",
+      "to_id": "Program:premium",
+      "properties": {},
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:29",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "CHARGES:Program:growth:Fee:f-growth:1",
+      "type": "CHARGES",
+      "tenant_id": "demo",
+      "from_id": "Program:growth",
+      "to_id": "Fee:f-growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "CHARGES:Program:export:Fee:f-export:2",
+      "type": "CHARGES",
+      "tenant_id": "demo",
+      "from_id": "Program:export",
+      "to_id": "Fee:f-export",
+      "properties": {},
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "CHARGES:Program:launch:Fee:f-launch:3",
+      "type": "CHARGES",
+      "tenant_id": "demo",
+      "from_id": "Program:launch",
+      "to_id": "Fee:f-launch",
+      "properties": {},
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "CHARGES:Program:premium:Fee:f-premium:4",
+      "type": "CHARGES",
+      "tenant_id": "demo",
+      "from_id": "Program:premium",
+      "to_id": "Fee:f-premium",
+      "properties": {},
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "GOVERNED_BY:Program:growth:Policy:p-growth:1",
+      "type": "GOVERNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Program:growth",
+      "to_id": "Policy:p-growth",
+      "properties": {},
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "GOVERNED_BY:Program:export:Policy:p-export:2",
+      "type": "GOVERNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Program:export",
+      "to_id": "Policy:p-export",
+      "properties": {},
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "GOVERNED_BY:Program:launch:Policy:p-launch:3",
+      "type": "GOVERNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Program:launch",
+      "to_id": "Policy:p-launch",
+      "properties": {},
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "GOVERNED_BY:Program:premium:Policy:p-premium:4",
+      "type": "GOVERNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Program:premium",
+      "to_id": "Policy:p-premium",
+      "properties": {},
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "WAIVED_BY:Policy:p-growth:EligibilityRule:r-1:1",
+      "type": "WAIVED_BY",
+      "tenant_id": "demo",
+      "from_id": "Policy:p-growth",
+      "to_id": "EligibilityRule:r-1",
+      "properties": {},
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "WAIVED_BY:Policy:p-export:EligibilityRule:r-4:2",
+      "type": "WAIVED_BY",
+      "tenant_id": "demo",
+      "from_id": "Policy:p-export",
+      "to_id": "EligibilityRule:r-4",
+      "properties": {},
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "WAIVED_BY:Policy:p-launch:EligibilityRule:r-2:3",
+      "type": "WAIVED_BY",
+      "tenant_id": "demo",
+      "from_id": "Policy:p-launch",
+      "to_id": "EligibilityRule:r-2",
+      "properties": {},
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "WAIVED_BY:Policy:p-premium:EligibilityRule:r-3:4",
+      "type": "WAIVED_BY",
+      "tenant_id": "demo",
+      "from_id": "Policy:p-premium",
+      "to_id": "EligibilityRule:r-3",
+      "properties": {},
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    }
+  ],
+  "corpus": [
+    {
+      "id": "chunk:Region:US",
+      "text": "Region code=US, name=United States.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Region:CA",
+      "text": "Region code=CA, name=Canada.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Region:UK",
+      "text": "Region code=UK, name=United Kingdom.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Region:DE",
+      "text": "Region code=DE, name=Germany.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Region:JP",
+      "text": "Region code=JP, name=Japan.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "regions",
+        "source_path": "regions.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Fee:f-growth",
+      "text": "Fee id=f-growth, type=referral, amount=2.5%.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "fees",
+        "source_path": "fees.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Fee:f-export",
+      "text": "Fee id=f-export, type=cross-border, amount=4%.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "fees",
+        "source_path": "fees.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Fee:f-launch",
+      "text": "Fee id=f-launch, type=subscription, amount=$29.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "fees",
+        "source_path": "fees.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Fee:f-premium",
+      "text": "Fee id=f-premium, type=service, amount=6%.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "fees",
+        "source_path": "fees.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:EligibilityRule:r-1",
+      "text": "EligibilityRule id=r-1, condition=annual sales above $100k.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "rules",
+        "source_path": "rules.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:EligibilityRule:r-2",
+      "text": "EligibilityRule id=r-2, condition=first 90 days.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "rules",
+        "source_path": "rules.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:EligibilityRule:r-3",
+      "text": "EligibilityRule id=r-3, condition=veteran-owned business.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "rules",
+        "source_path": "rules.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:EligibilityRule:r-4",
+      "text": "EligibilityRule id=r-4, condition=sustainable packaging.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "rules",
+        "source_path": "rules.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Policy:p-growth",
+      "text": "Policy id=p-growth, name=Growth Policy.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Policy:p-export",
+      "text": "Policy id=p-export, name=Export Policy.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Policy:p-launch",
+      "text": "Policy id=p-launch, name=Launch Policy.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Policy:p-premium",
+      "text": "Policy id=p-premium, name=Premium Policy.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Program:growth",
+      "text": "Program id=growth, name=Growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Program:export",
+      "text": "Program id=export, name=Export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Program:launch",
+      "text": "Program id=launch, name=Launch.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Program:premium",
+      "text": "Program id=premium, name=Premium.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-01",
+      "text": "Seller id=s-01, name=Northstar Goods, tier=gold.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-02",
+      "text": "Seller id=s-02, name=Maple Works, tier=silver.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-03",
+      "text": "Seller id=s-03, name=Thames Studio, tier=gold.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-04",
+      "text": "Seller id=s-04, name=Rhine Supply, tier=silver.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-05",
+      "text": "Seller id=s-05, name=Kumo Market, tier=gold.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-06",
+      "text": "Seller id=s-06, name=Cedar Lane, tier=bronze.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:6",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-07",
+      "text": "Seller id=s-07, name=Harbor Craft, tier=silver.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:7",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-08",
+      "text": "Seller id=s-08, name=Borough Home, tier=bronze.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:8",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-09",
+      "text": "Seller id=s-09, name=Alpine Form, tier=gold.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:9",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-10",
+      "text": "Seller id=s-10, name=Sakura Tools, tier=silver.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:10",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-11",
+      "text": "Seller id=s-11, name=Desert Bloom, tier=bronze.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:11",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Seller:s-12",
+      "text": "Seller id=s-12, name=Pacific Loom, tier=gold.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:12",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-01:Region:US:1",
+      "text": "Seller:s-01 APPLIES_IN Region:US.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-02:Region:CA:2",
+      "text": "Seller:s-02 APPLIES_IN Region:CA.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-03:Region:UK:3",
+      "text": "Seller:s-03 APPLIES_IN Region:UK.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-04:Region:DE:4",
+      "text": "Seller:s-04 APPLIES_IN Region:DE.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-05:Region:JP:5",
+      "text": "Seller:s-05 APPLIES_IN Region:JP.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-06:Region:US:6",
+      "text": "Seller:s-06 APPLIES_IN Region:US.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:6",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-07:Region:CA:7",
+      "text": "Seller:s-07 APPLIES_IN Region:CA.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:7",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-08:Region:UK:8",
+      "text": "Seller:s-08 APPLIES_IN Region:UK.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:8",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-09:Region:DE:9",
+      "text": "Seller:s-09 APPLIES_IN Region:DE.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:9",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-10:Region:JP:10",
+      "text": "Seller:s-10 APPLIES_IN Region:JP.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:10",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-11:Region:US:11",
+      "text": "Seller:s-11 APPLIES_IN Region:US.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:11",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:APPLIES_IN:Seller:s-12:Region:US:12",
+      "text": "Seller:s-12 APPLIES_IN Region:US.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "sellers",
+        "source_path": "sellers.csv",
+        "locator": "row:12",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-01:Program:growth:1",
+      "text": "Seller:s-01 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-01:Program:export:2",
+      "text": "Seller:s-01 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-01:Program:premium:3",
+      "text": "Seller:s-01 ELIGIBLE_FOR Program:premium.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-02:Program:growth:4",
+      "text": "Seller:s-02 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-02:Program:export:5",
+      "text": "Seller:s-02 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-03:Program:growth:6",
+      "text": "Seller:s-03 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:6",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-03:Program:export:7",
+      "text": "Seller:s-03 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:7",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-03:Program:premium:8",
+      "text": "Seller:s-03 ELIGIBLE_FOR Program:premium.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:8",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-04:Program:growth:9",
+      "text": "Seller:s-04 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:9",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-04:Program:export:10",
+      "text": "Seller:s-04 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:10",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-05:Program:growth:11",
+      "text": "Seller:s-05 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:11",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-05:Program:export:12",
+      "text": "Seller:s-05 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:12",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-05:Program:premium:13",
+      "text": "Seller:s-05 ELIGIBLE_FOR Program:premium.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:13",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-06:Program:launch:14",
+      "text": "Seller:s-06 ELIGIBLE_FOR Program:launch.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:14",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-06:Program:growth:15",
+      "text": "Seller:s-06 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:15",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-07:Program:launch:16",
+      "text": "Seller:s-07 ELIGIBLE_FOR Program:launch.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:16",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-07:Program:export:17",
+      "text": "Seller:s-07 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:17",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-08:Program:launch:18",
+      "text": "Seller:s-08 ELIGIBLE_FOR Program:launch.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:18",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-08:Program:growth:19",
+      "text": "Seller:s-08 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:19",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-09:Program:growth:20",
+      "text": "Seller:s-09 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:20",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-09:Program:export:21",
+      "text": "Seller:s-09 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:21",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-09:Program:premium:22",
+      "text": "Seller:s-09 ELIGIBLE_FOR Program:premium.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:22",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-10:Program:launch:23",
+      "text": "Seller:s-10 ELIGIBLE_FOR Program:launch.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:23",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-10:Program:export:24",
+      "text": "Seller:s-10 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:24",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-11:Program:launch:25",
+      "text": "Seller:s-11 ELIGIBLE_FOR Program:launch.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:25",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-11:Program:growth:26",
+      "text": "Seller:s-11 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:26",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-12:Program:growth:27",
+      "text": "Seller:s-12 ELIGIBLE_FOR Program:growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:27",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-12:Program:export:28",
+      "text": "Seller:s-12 ELIGIBLE_FOR Program:export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:28",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:ELIGIBLE_FOR:Seller:s-12:Program:premium:29",
+      "text": "Seller:s-12 ELIGIBLE_FOR Program:premium.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "eligibility",
+        "source_path": "eligibility.csv",
+        "locator": "row:29",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:CHARGES:Program:growth:Fee:f-growth:1",
+      "text": "Program:growth CHARGES Fee:f-growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:CHARGES:Program:export:Fee:f-export:2",
+      "text": "Program:export CHARGES Fee:f-export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:CHARGES:Program:launch:Fee:f-launch:3",
+      "text": "Program:launch CHARGES Fee:f-launch.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:CHARGES:Program:premium:Fee:f-premium:4",
+      "text": "Program:premium CHARGES Fee:f-premium.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:GOVERNED_BY:Program:growth:Policy:p-growth:1",
+      "text": "Program:growth GOVERNED_BY Policy:p-growth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:GOVERNED_BY:Program:export:Policy:p-export:2",
+      "text": "Program:export GOVERNED_BY Policy:p-export.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:GOVERNED_BY:Program:launch:Policy:p-launch:3",
+      "text": "Program:launch GOVERNED_BY Policy:p-launch.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:GOVERNED_BY:Program:premium:Policy:p-premium:4",
+      "text": "Program:premium GOVERNED_BY Policy:p-premium.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "programs",
+        "source_path": "programs.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:WAIVED_BY:Policy:p-growth:EligibilityRule:r-1:1",
+      "text": "Policy:p-growth WAIVED_BY EligibilityRule:r-1.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:WAIVED_BY:Policy:p-export:EligibilityRule:r-4:2",
+      "text": "Policy:p-export WAIVED_BY EligibilityRule:r-4.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:WAIVED_BY:Policy:p-launch:EligibilityRule:r-2:3",
+      "text": "Policy:p-launch WAIVED_BY EligibilityRule:r-2.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:WAIVED_BY:Policy:p-premium:EligibilityRule:r-3:4",
+      "text": "Policy:p-premium WAIVED_BY EligibilityRule:r-3.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policies",
+        "source_path": "policies.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:policy_guide:1",
+      "text": "# Seller program policy guide\n\nSeller eligibility depends on the seller's operating region and an explicit program enrollment.\nFees belong to programs, not to sellers or regions. Waivers are governed by the policy connected\nto the program and must not be inferred from seller tier alone.\n\nUse relationship traversal for eligibility, fee, policy, and waiver decisions. Use document\nretrieval for narrative explanations and onboarding guidance.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "policy_guide",
+        "source_path": "policy-guide.md",
+        "locator": "chars:0-442",
+        "quote": "# Seller program policy guide\n\nSeller eligibility depends on the seller's operating region and an explicit program enrollment.\nFees belong to programs, not to sellers or regions. Waivers are governed by the policy connected\nto the program and must not be inferred from seller tier alone.\n\nUse relationship traversal for eligibility, fee, policy, and waiver decisions. Use document\nretrieval for narrative explanations and onboarding guidance.",
+        "confidence": null
+      }
+    }
+  ],
+  "counts": {
+    "nodes": 33,
+    "relationships": 53,
+    "chunks": 87
+  }
+}

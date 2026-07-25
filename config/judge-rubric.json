@@ -1,5 +1,0 @@
-{
-  "source":"Vendored weight contract from AI Eval Control Tower",
-  "weights":{"graphrag-eval-v1":{"accuracy":0.5,"relevance":0.3,"coherence":0.1,"actionability":0.05,"conciseness":0.05}},
-  "scale":{"min":1,"max":10}
-}

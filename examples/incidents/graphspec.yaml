@@ -1,0 +1,231 @@
+metadata:
+  name: Incident Dependency Graph
+  version: 1.0.0
+  tenant_id: demo
+  description: Services, owners, customers, deployments, incidents, and bounded dependency impact.
+sources:
+  - id: teams
+    path: teams.csv
+    format: csv
+  - id: services
+    path: services.csv
+    format: csv
+  - id: dependencies
+    path: dependencies.csv
+    format: csv
+  - id: customers
+    path: customers.csv
+    format: csv
+  - id: usage
+    path: usage.csv
+    format: csv
+  - id: incidents
+    path: incidents.csv
+    format: csv
+  - id: deployments
+    path: deployments.csv
+    format: csv
+  - id: runbook
+    path: runbook.md
+    format: markdown
+  - id: postmortem
+    path: postmortem.md
+    format: markdown
+node_types:
+  - name: Team
+    key: id
+    description: Accountable service-owning team.
+    properties:
+      id: {type: string, required: true}
+      name: {type: string, required: true}
+  - name: Service
+    key: id
+    description: Runtime service participating in dependencies.
+    properties:
+      id: {type: string, required: true}
+      name: {type: string, required: true}
+      tier: {type: integer, required: true}
+  - name: Customer
+    key: id
+    description: Synthetic customer using a service.
+    properties:
+      id: {type: string, required: true}
+      name: {type: string, required: true}
+      segment: {type: string, required: true}
+  - name: Incident
+    key: id
+    description: Operational incident tied to an affected service.
+    properties:
+      id: {type: string, required: true}
+      status: {type: string, required: true}
+      severity: {type: string, required: true}
+      started_at: {type: datetime, required: true}
+  - name: Deployment
+    key: id
+    description: Versioned service deployment.
+    properties:
+      id: {type: string, required: true}
+      version: {type: string, required: true}
+      deployed_at: {type: datetime, required: true}
+relationship_types:
+  - name: OWNED_BY
+    from_type: Service
+    to_type: Team
+  - name: DEPENDS_ON
+    from_type: Service
+    to_type: Service
+  - name: USES
+    from_type: Customer
+    to_type: Service
+  - name: IMPACTS
+    from_type: Incident
+    to_type: Service
+  - name: DEPLOYS
+    from_type: Deployment
+    to_type: Service
+node_mappings:
+  - id: teams_to_nodes
+    source: teams
+    node_type: Team
+    key_field: team_id
+    properties: {id: team_id, name: name}
+  - id: services_to_nodes
+    source: services
+    node_type: Service
+    key_field: service_id
+    properties: {id: service_id, name: name, tier: tier}
+  - id: customers_to_nodes
+    source: customers
+    node_type: Customer
+    key_field: customer_id
+    properties: {id: customer_id, name: name, segment: segment}
+  - id: incidents_to_nodes
+    source: incidents
+    node_type: Incident
+    key_field: incident_id
+    properties:
+      id: incident_id
+      status: status
+      severity: severity
+      started_at: started_at
+  - id: deployments_to_nodes
+    source: deployments
+    node_type: Deployment
+    key_field: deployment_id
+    properties:
+      id: deployment_id
+      version: version
+      deployed_at: deployed_at
+relationship_mappings:
+  - id: service_owners
+    source: services
+    relationship_type: OWNED_BY
+    from_field: service_id
+    to_field: owner_team
+  - id: service_dependencies
+    source: dependencies
+    relationship_type: DEPENDS_ON
+    from_field: service_id
+    to_field: depends_on_id
+  - id: customer_usage
+    source: usage
+    relationship_type: USES
+    from_field: customer_id
+    to_field: service_id
+  - id: incident_impacts
+    source: incidents
+    relationship_type: IMPACTS
+    from_field: incident_id
+    to_field: service_id
+  - id: deployment_targets
+    source: deployments
+    relationship_type: DEPLOYS
+    from_field: deployment_id
+    to_field: service_id
+query_recipes:
+  - id: incident_customer_impact
+    description: Find customers exposed through bounded service dependencies and the owning team.
+    route: graph
+    examples:
+      - Which customers are exposed to incident INC-104 and which team owns the failure?
+      - Show the customer impact path for INC-104.
+      - Who is affected by incident INC-099?
+      - Trace INC-099 from the incident to customer-facing services.
+      - Map an incident through dependencies to exposed customers.
+    parameters:
+      incident_id:
+        type: string
+        description: Incident identifier.
+        candidates: {node_type: Incident, property: id}
+    cypher: |
+      MATCH (i:Incident {tenant_id: $tenant_id, id: $incident_id})-[:IMPACTS]->(root:Service)
+      MATCH path=(customer:Customer {tenant_id: $tenant_id})-[:USES]->(entry:Service)
+        -[:DEPENDS_ON*0..3]->(root)
+      MATCH (root)-[:OWNED_BY]->(team:Team {tenant_id: $tenant_id})
+      WHERE all(node IN nodes(path) WHERE node.tenant_id = $tenant_id)
+      RETURN i.id AS incident, collect(DISTINCT customer.name) AS customers,
+        team.name AS owner, collect([node IN nodes(path) | coalesce(node.name, node.id)]) AS paths
+      LIMIT 20
+    result_description: Impacted customers, dependency paths, and accountable team.
+  - id: service_owner
+    description: Resolve the accountable team for a named service.
+    route: graph
+    examples:
+      - Which team owns the Authentication Service?
+      - Who owns Checkout API?
+      - Find the owner for Order Ledger.
+    parameters:
+      service_name:
+        type: string
+        description: Exact service name.
+        candidates: {node_type: Service, property: name}
+    cypher: |
+      MATCH (service:Service {tenant_id: $tenant_id, name: $service_name})
+        -[:OWNED_BY]->(team:Team {tenant_id: $tenant_id})
+      RETURN service.name AS service, team.name AS owner
+      LIMIT 10
+    result_description: Service and accountable team.
+  - id: postmortem_mitigation
+    description: Retrieve narrative mitigation details from runbooks and postmortems.
+    route: vector
+    examples:
+      - Summarize the mitigation steps in the order ledger postmortem.
+      - What did the team do to resolve INC-099?
+      - Explain the authentication runbook.
+      - What rollback and recovery actions are documented?
+      - Summarize the documented response procedure.
+      - Describe the mitigation, postmortem, or runbook guidance.
+      - Give a source-backed summary of the incident response notes.
+    parameters: {}
+    result_description: Source-backed narrative mitigation summary.
+  - id: incident_mitigation_owner
+    description: Combine incident ownership and dependency facts with source-backed mitigation guidance.
+    route: hybrid
+    examples:
+      - For INC-104, who owns the failing service and what mitigation does the runbook recommend?
+      - Combine the INC-099 owner with the documented recovery steps.
+      - Show incident accountability and the relevant response guidance.
+    parameters:
+      incident_id:
+        type: string
+        description: Incident identifier.
+        candidates: {node_type: Incident, property: id}
+    cypher: |
+      MATCH (incident:Incident {tenant_id: $tenant_id, id: $incident_id})
+        -[:IMPACTS]->(service:Service {tenant_id: $tenant_id})
+        -[:OWNED_BY]->(team:Team {tenant_id: $tenant_id})
+      RETURN incident.id AS incident, service.name AS service, team.name AS owner
+      LIMIT 10
+    result_description: Incident owner plus cited mitigation or recovery evidence.
+vector:
+  enabled: true
+  chunk_size: 900
+  chunk_overlap: 100
+  top_k: 5
+ui:
+  nodes:
+    Team: {x: 760, y: 90}
+    Service: {x: 440, y: 180}
+    Customer: {x: 80, y: 80}
+    Incident: {x: 80, y: 300}
+    Deployment: {x: 760, y: 330}

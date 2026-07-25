@@ -1,3 +1,15 @@
 .env
+.env.local
+.venv/
 node_modules/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.tsbuildinfo
+frontend/dist/
+frontend/vite.config.js
+frontend/vite.config.d.ts
+playwright-report/
+test-results/
 .neo4j/

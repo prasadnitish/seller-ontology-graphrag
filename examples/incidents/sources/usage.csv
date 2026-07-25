@@ -1,0 +1,5 @@
+customer_id,service_id
+cus-northstar,svc-checkout
+cus-cedar,svc-checkout
+cus-harbor,svc-notify
+cus-kumo,svc-auth

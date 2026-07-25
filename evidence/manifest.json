@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "generated_from": "committed local artifacts",
+  "publishable_graph_vs_vector_claim": false,
+  "scenarios": {
+    "incidents": {
+      "ontology_version": "1.0.0",
+      "mapped_fields": 22,
+      "ignored_fields": 0,
+      "unmapped_fields": 0,
+      "nodes": 17,
+      "relationships": 17,
+      "chunks": 36,
+      "routing_cases": 40,
+      "routing_passed": 40,
+      "routing_pass_rate_pct": 100.0,
+      "evaluation": "examples/incidents/generated/evaluation.json",
+      "graph_ir": "examples/incidents/generated/graph-ir.json"
+    },
+    "seller": {
+      "ontology_version": "1.0.0",
+      "mapped_fields": 20,
+      "ignored_fields": 0,
+      "unmapped_fields": 0,
+      "nodes": 33,
+      "relationships": 53,
+      "chunks": 87,
+      "routing_cases": 40,
+      "routing_passed": 37,
+      "routing_pass_rate_pct": 92.5,
+      "evaluation": "examples/seller/generated/evaluation.json",
+      "graph_ir": "examples/seller/generated/graph-ir.json"
+    }
+  },
+  "provider_certification": {
+    "openai": {
+      "status": "not_run",
+      "reason": "OPENAI_API_KEY was not configured"
+    },
+    "ollama": {
+      "status": "not_run",
+      "reason": "Required local models were not installed"
+    }
+  },
+  "hosted_demo": {
+    "status": "not_deployed",
+    "reason": "AuraDB credentials and a production API target were not configured"
+  }
+}

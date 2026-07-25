@@ -1,0 +1,5 @@
+policy_id,name,rule_id
+p-growth,Growth Policy,r-1
+p-export,Export Policy,r-4
+p-launch,Launch Policy,r-2
+p-premium,Premium Policy,r-3

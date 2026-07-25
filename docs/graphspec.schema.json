@@ -1,0 +1,498 @@
+{
+  "$defs": {
+    "CandidateLookup": {
+      "additionalProperties": false,
+      "properties": {
+        "node_type": {
+          "title": "Node Type",
+          "type": "string"
+        },
+        "property": {
+          "title": "Property",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_type",
+        "property"
+      ],
+      "title": "CandidateLookup",
+      "type": "object"
+    },
+    "GraphMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        },
+        "tenant_id": {
+          "default": "demo",
+          "title": "Tenant Id",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "title": "GraphMetadata",
+      "type": "object"
+    },
+    "NodeMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "node_type": {
+          "title": "Node Type",
+          "type": "string"
+        },
+        "key_field": {
+          "title": "Key Field",
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Properties"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "node_type",
+        "key_field",
+        "properties"
+      ],
+      "title": "NodeMapping",
+      "type": "object"
+    },
+    "NodeType": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "key": {
+          "default": "id",
+          "title": "Key",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/PropertySpec"
+          },
+          "title": "Properties"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "NodeType",
+      "type": "object"
+    },
+    "ParameterSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "string",
+          "enum": [
+            "string",
+            "integer",
+            "number",
+            "boolean"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "required": {
+          "default": true,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "candidates": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CandidateLookup"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "title": "ParameterSpec",
+      "type": "object"
+    },
+    "PropertySpec": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "string",
+          "enum": [
+            "string",
+            "integer",
+            "number",
+            "boolean",
+            "date",
+            "datetime"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "required": {
+          "default": false,
+          "title": "Required",
+          "type": "boolean"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "title": "PropertySpec",
+      "type": "object"
+    },
+    "QueryRecipe": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "route": {
+          "$ref": "#/$defs/Route"
+        },
+        "examples": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Examples",
+          "type": "array"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ParameterSpec"
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "cypher": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cypher"
+        },
+        "result_description": {
+          "default": "",
+          "title": "Result Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "route",
+        "examples"
+      ],
+      "title": "QueryRecipe",
+      "type": "object"
+    },
+    "RelationshipMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "relationship_type": {
+          "title": "Relationship Type",
+          "type": "string"
+        },
+        "from_field": {
+          "title": "From Field",
+          "type": "string"
+        },
+        "to_field": {
+          "title": "To Field",
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Properties"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "relationship_type",
+        "from_field",
+        "to_field"
+      ],
+      "title": "RelationshipMapping",
+      "type": "object"
+    },
+    "RelationshipType": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "from_type": {
+          "title": "From Type",
+          "type": "string"
+        },
+        "to_type": {
+          "title": "To Type",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/PropertySpec"
+          },
+          "title": "Properties"
+        }
+      },
+      "required": [
+        "name",
+        "from_type",
+        "to_type"
+      ],
+      "title": "RelationshipType",
+      "type": "object"
+    },
+    "Route": {
+      "enum": [
+        "graph",
+        "vector",
+        "hybrid"
+      ],
+      "title": "Route",
+      "type": "string"
+    },
+    "SourceFormat": {
+      "enum": [
+        "csv",
+        "json",
+        "markdown",
+        "text"
+      ],
+      "title": "SourceFormat",
+      "type": "string"
+    },
+    "SourceSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "format": {
+          "$ref": "#/$defs/SourceFormat"
+        },
+        "record_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Path"
+        },
+        "ignored_fields": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Ignored Fields",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "format"
+      ],
+      "title": "SourceSpec",
+      "type": "object"
+    },
+    "UILayout": {
+      "additionalProperties": false,
+      "properties": {
+        "nodes": {
+          "additionalProperties": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object"
+          },
+          "title": "Nodes",
+          "type": "object"
+        }
+      },
+      "title": "UILayout",
+      "type": "object"
+    },
+    "VectorConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "default": true,
+          "title": "Enabled",
+          "type": "boolean"
+        },
+        "chunk_size": {
+          "default": 900,
+          "maximum": 4000,
+          "minimum": 200,
+          "title": "Chunk Size",
+          "type": "integer"
+        },
+        "chunk_overlap": {
+          "default": 100,
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Chunk Overlap",
+          "type": "integer"
+        },
+        "top_k": {
+          "default": 5,
+          "maximum": 20,
+          "minimum": 1,
+          "title": "Top K",
+          "type": "integer"
+        }
+      },
+      "title": "VectorConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "$ref": "#/$defs/GraphMetadata"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourceSpec"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "node_types": {
+      "items": {
+        "$ref": "#/$defs/NodeType"
+      },
+      "title": "Node Types",
+      "type": "array"
+    },
+    "relationship_types": {
+      "items": {
+        "$ref": "#/$defs/RelationshipType"
+      },
+      "title": "Relationship Types",
+      "type": "array"
+    },
+    "node_mappings": {
+      "items": {
+        "$ref": "#/$defs/NodeMapping"
+      },
+      "title": "Node Mappings",
+      "type": "array"
+    },
+    "relationship_mappings": {
+      "items": {
+        "$ref": "#/$defs/RelationshipMapping"
+      },
+      "title": "Relationship Mappings",
+      "type": "array"
+    },
+    "query_recipes": {
+      "items": {
+        "$ref": "#/$defs/QueryRecipe"
+      },
+      "title": "Query Recipes",
+      "type": "array"
+    },
+    "vector": {
+      "$ref": "#/$defs/VectorConfig"
+    },
+    "ui": {
+      "$ref": "#/$defs/UILayout"
+    }
+  },
+  "required": [
+    "metadata",
+    "sources",
+    "node_types",
+    "relationship_types",
+    "node_mappings",
+    "relationship_mappings",
+    "query_recipes"
+  ],
+  "title": "GraphSpec",
+  "type": "object"
+}

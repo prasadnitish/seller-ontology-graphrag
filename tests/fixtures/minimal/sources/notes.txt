@@ -1,0 +1,2 @@
+Ada and Grace are synthetic fixture people used to prove that the compiler has no seller or
+incident-specific code.

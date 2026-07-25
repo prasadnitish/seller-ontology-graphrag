@@ -1,0 +1,322 @@
+{
+  "generated_at": "2026-07-25T15:16:14.561454+00:00",
+  "sources": [
+    {
+      "id": "eligibility",
+      "relative_path": "eligibility.csv",
+      "format": "csv",
+      "sha256": "fcd9f74c1fea16f6a93dc54d5e70ff061836cad49cff0f84a6d42b3586d11f82",
+      "size_bytes": 374,
+      "record_count": 29,
+      "fields": [
+        {
+          "name": "program_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "growth",
+            "export",
+            "premium"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "seller_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "s-01",
+            "s-02",
+            "s-03"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "fees",
+      "relative_path": "fees.csv",
+      "format": "csv",
+      "sha256": "b03f92376d7d799e6be00a7a3650ba79f092de6fb1b6aff7d79ee76d92ed65be",
+      "size_bytes": 114,
+      "record_count": 4,
+      "fields": [
+        {
+          "name": "amount",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "2.5%",
+            "4%",
+            "$29"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "fee_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "f-growth",
+            "f-export",
+            "f-launch"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "type",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "referral",
+            "cross-border",
+            "subscription"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "policies",
+      "relative_path": "policies.csv",
+      "format": "csv",
+      "sha256": "4533500adfae3e4612d77dcbf315bf9019961f3d0c43cf1e9988382afc449064",
+      "size_bytes": 133,
+      "record_count": 4,
+      "fields": [
+        {
+          "name": "name",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "Growth Policy",
+            "Export Policy",
+            "Launch Policy"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "policy_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "p-growth",
+            "p-export",
+            "p-launch"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "rule_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "r-1",
+            "r-4",
+            "r-2"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "policy_guide",
+      "relative_path": "policy-guide.md",
+      "format": "markdown",
+      "sha256": "63aa4328713ea9bef1fb939f847313b3e998e055e7b43e55728197c9e454b48b",
+      "size_bytes": 443,
+      "record_count": 3,
+      "fields": [],
+      "headings": [
+        "Seller program policy guide"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "programs",
+      "relative_path": "programs.csv",
+      "format": "csv",
+      "sha256": "580def0eb071cba2e87641da29e2a034145dd1c33f1bda10c4ccf682a87ea1a7",
+      "size_bytes": 165,
+      "record_count": 4,
+      "fields": [
+        {
+          "name": "fee_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "f-growth",
+            "f-export",
+            "f-launch"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "name",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "Growth",
+            "Export",
+            "Launch"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "policy_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "p-growth",
+            "p-export",
+            "p-launch"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "program_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "growth",
+            "export",
+            "launch"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "regions",
+      "relative_path": "regions.csv",
+      "format": "csv",
+      "sha256": "4445f5f087a5d5fb22a19f7a432101bed353f31beb2fc4dff21735f0fbddbbe3",
+      "size_bytes": 75,
+      "record_count": 5,
+      "fields": [
+        {
+          "name": "code",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "US",
+            "CA",
+            "UK"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "name",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "United States",
+            "Canada",
+            "United Kingdom"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "rules",
+      "relative_path": "rules.csv",
+      "format": "csv",
+      "sha256": "b2731eeffa69fa068ee1c1623063ae8c04c6d8b0c00eca78e57e66bf9db3b50b",
+      "size_bytes": 118,
+      "record_count": 4,
+      "fields": [
+        {
+          "name": "condition",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "annual sales above $100k",
+            "first 90 days",
+            "veteran-owned business"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "rule_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "r-1",
+            "r-2",
+            "r-3"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "sellers",
+      "relative_path": "sellers.csv",
+      "format": "csv",
+      "sha256": "6d32c82e46f87b08bfdc52f9c23f02aa69b892926a2eaf59c42bc247be7c7b43",
+      "size_bytes": 357,
+      "record_count": 12,
+      "fields": [
+        {
+          "name": "name",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "Northstar Goods",
+            "Maple Works",
+            "Thames Studio"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "region_code",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "US",
+            "CA",
+            "UK"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "seller_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "s-01",
+            "s-02",
+            "s-03"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "tier",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "gold",
+            "silver",
+            "bronze"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    }
+  ]
+}
