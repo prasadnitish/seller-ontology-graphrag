@@ -1,0 +1,3 @@
+deployment_id,service_id,version,deployed_at
+dep-401,svc-auth,2026.07.21.3,2026-07-21T16:10:00Z
+dep-388,svc-ledger,2026.07.12.1,2026-07-12T08:42:00Z

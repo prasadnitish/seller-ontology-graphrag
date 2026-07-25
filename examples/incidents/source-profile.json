@@ -1,0 +1,346 @@
+{
+  "generated_at": "2026-07-25T15:16:13.159743+00:00",
+  "sources": [
+    {
+      "id": "customers",
+      "relative_path": "customers.csv",
+      "format": "csv",
+      "sha256": "0fc70fb2e9b3032988b7b04d163c49e4447555fad861380c46c8600751885b67",
+      "size_bytes": 173,
+      "record_count": 4,
+      "fields": [
+        {
+          "name": "customer_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "cus-northstar",
+            "cus-cedar",
+            "cus-harbor"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "name",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "Northstar Retail",
+            "Cedar Marketplace",
+            "Harbor Goods"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "segment",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "enterprise",
+            "mid-market"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "dependencies",
+      "relative_path": "dependencies.csv",
+      "format": "csv",
+      "sha256": "15cb5abc1c7e46756705b26809c8fff417cad3a18ff2cb689ff27b85c76d54ba",
+      "size_bytes": 112,
+      "record_count": 4,
+      "fields": [
+        {
+          "name": "depends_on_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "svc-auth",
+            "svc-ledger",
+            "svc-feature"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "service_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "svc-checkout",
+            "svc-auth",
+            "svc-notify"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "deployments",
+      "relative_path": "deployments.csv",
+      "format": "csv",
+      "sha256": "a7b7f933a4620991b4194c2fad9bb6aeec22c9083263b83d28f04a4be9497482",
+      "size_bytes": 149,
+      "record_count": 2,
+      "fields": [
+        {
+          "name": "deployed_at",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "2026-07-21T16:10:00Z",
+            "2026-07-12T08:42:00Z"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "deployment_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "dep-401",
+            "dep-388"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "service_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "svc-auth",
+            "svc-ledger"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "version",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "2026.07.21.3",
+            "2026.07.12.1"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "incidents",
+      "relative_path": "incidents.csv",
+      "format": "csv",
+      "sha256": "899892e4b4d6990746549f361852c4cdd1e2d785e57cbfa7832112d9832f4ac5",
+      "size_bytes": 154,
+      "record_count": 2,
+      "fields": [
+        {
+          "name": "incident_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "INC-104",
+            "INC-099"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "service_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "svc-auth",
+            "svc-ledger"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "severity",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "SEV-1",
+            "SEV-2"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "started_at",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "2026-07-21T16:32:00Z",
+            "2026-07-12T09:15:00Z"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "status",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "open",
+            "resolved"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "postmortem",
+      "relative_path": "postmortem.md",
+      "format": "markdown",
+      "sha256": "026284d499657139549571b9942b8b0c5f2a7a9d472ee7e0f7aca0be5c72449a",
+      "size_bytes": 401,
+      "record_count": 3,
+      "fields": [],
+      "headings": [
+        "INC-099 order ledger postmortem"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "runbook",
+      "relative_path": "runbook.md",
+      "format": "markdown",
+      "sha256": "c0533af8e8742ec3dc66253d781f295128955b1aad0b6f2412ce3cfb17bbd7bf",
+      "size_bytes": 384,
+      "record_count": 3,
+      "fields": [],
+      "headings": [
+        "Authentication service incident runbook"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "services",
+      "relative_path": "services.csv",
+      "format": "csv",
+      "sha256": "5cc3d96345d59b1170531020a333bcba9b8cf6f39ec546c0b3c833e77190b80a",
+      "size_bytes": 247,
+      "record_count": 5,
+      "fields": [
+        {
+          "name": "name",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "Checkout API",
+            "Authentication Service",
+            "Order Ledger"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "owner_team",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "team-checkout",
+            "team-identity",
+            "team-data"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "service_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "svc-checkout",
+            "svc-auth",
+            "svc-ledger"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "tier",
+          "inferred_type": "integer",
+          "null_count": 0,
+          "samples": [
+            "1",
+            "2"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "teams",
+      "relative_path": "teams.csv",
+      "format": "csv",
+      "sha256": "38981b067c45b2966ccc6f48a0328fc43732f1290fc96c354cfa2e7eae00d127",
+      "size_bytes": 137,
+      "record_count": 4,
+      "fields": [
+        {
+          "name": "name",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "Checkout Platform",
+            "Identity Foundations",
+            "Data Reliability"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "team_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "team-checkout",
+            "team-identity",
+            "team-data"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    },
+    {
+      "id": "usage",
+      "relative_path": "usage.csv",
+      "format": "csv",
+      "sha256": "638231babacf915eb44b08d945223d88b545ef35a322e1b2e8095ded07cbb225",
+      "size_bytes": 113,
+      "record_count": 4,
+      "fields": [
+        {
+          "name": "customer_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "cus-northstar",
+            "cus-cedar",
+            "cus-harbor"
+          ],
+          "sensitive": false
+        },
+        {
+          "name": "service_id",
+          "inferred_type": "string",
+          "null_count": 0,
+          "samples": [
+            "svc-checkout",
+            "svc-notify",
+            "svc-auth"
+          ],
+          "sensitive": false
+        }
+      ],
+      "headings": [],
+      "warnings": []
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+metadata:
+  name: Seller Policy Graph
+  version: 1.0.0
+  tenant_id: demo
+  description: Seller eligibility, program fees, policies, regions, and waiver rules.
+sources:
+  - {id: regions, path: regions.csv, format: csv}
+  - {id: fees, path: fees.csv, format: csv}
+  - {id: rules, path: rules.csv, format: csv}
+  - {id: policies, path: policies.csv, format: csv}
+  - {id: programs, path: programs.csv, format: csv}
+  - {id: sellers, path: sellers.csv, format: csv}
+  - {id: eligibility, path: eligibility.csv, format: csv}
+  - {id: policy_guide, path: policy-guide.md, format: markdown}
+node_types:
+  - name: Region
+    key: code
+    properties:
+      code: {type: string, required: true}
+      name: {type: string, required: true}
+  - name: Fee
+    key: id
+    properties:
+      id: {type: string, required: true}
+      type: {type: string, required: true}
+      amount: {type: string, required: true}
+  - name: EligibilityRule
+    key: id
+    properties:
+      id: {type: string, required: true}
+      condition: {type: string, required: true}
+  - name: Policy
+    key: id
+    properties:
+      id: {type: string, required: true}
+      name: {type: string, required: true}
+  - name: Program
+    key: id
+    properties:
+      id: {type: string, required: true}
+      name: {type: string, required: true}
+  - name: Seller
+    key: id
+    properties:
+      id: {type: string, required: true}
+      name: {type: string, required: true}
+      tier: {type: string, required: true}
+relationship_types:
+  - {name: APPLIES_IN, from_type: Seller, to_type: Region}
+  - {name: ELIGIBLE_FOR, from_type: Seller, to_type: Program}
+  - {name: CHARGES, from_type: Program, to_type: Fee}
+  - {name: GOVERNED_BY, from_type: Program, to_type: Policy}
+  - {name: WAIVED_BY, from_type: Policy, to_type: EligibilityRule}
+node_mappings:
+  - id: region_nodes
+    source: regions
+    node_type: Region
+    key_field: code
+    properties: {code: code, name: name}
+  - id: fee_nodes
+    source: fees
+    node_type: Fee
+    key_field: fee_id
+    properties: {id: fee_id, type: type, amount: amount}
+  - id: rule_nodes
+    source: rules
+    node_type: EligibilityRule
+    key_field: rule_id
+    properties: {id: rule_id, condition: condition}
+  - id: policy_nodes
+    source: policies
+    node_type: Policy
+    key_field: policy_id
+    properties: {id: policy_id, name: name}
+  - id: program_nodes
+    source: programs
+    node_type: Program
+    key_field: program_id
+    properties: {id: program_id, name: name}
+  - id: seller_nodes
+    source: sellers
+    node_type: Seller
+    key_field: seller_id
+    properties: {id: seller_id, name: name, tier: tier}
+relationship_mappings:
+  - id: seller_regions
+    source: sellers
+    relationship_type: APPLIES_IN
+    from_field: seller_id
+    to_field: region_code
+  - id: seller_programs
+    source: eligibility
+    relationship_type: ELIGIBLE_FOR
+    from_field: seller_id
+    to_field: program_id
+  - id: program_fees
+    source: programs
+    relationship_type: CHARGES
+    from_field: program_id
+    to_field: fee_id
+  - id: program_policies
+    source: programs
+    relationship_type: GOVERNED_BY
+    from_field: program_id
+    to_field: policy_id
+  - id: policy_rules
+    source: policies
+    relationship_type: WAIVED_BY
+    from_field: policy_id
+    to_field: rule_id
+query_recipes:
+  - id: seller_eligibility_fee
+    description: Find eligible sellers in a region and the fee charged by the program.
+    route: graph
+    examples:
+      - Which US sellers are eligible for Growth and what fee applies?
+      - Show Export sellers in Canada and the program fee.
+      - Who qualifies for Premium in the United Kingdom?
+    parameters:
+      region_code:
+        type: string
+        candidates: {node_type: Region, property: code}
+      program_name:
+        type: string
+        candidates: {node_type: Program, property: name}
+    cypher: |
+      MATCH (seller:Seller {tenant_id: $tenant_id})-[:APPLIES_IN]->
+        (region:Region {tenant_id: $tenant_id, code: $region_code})
+      MATCH (seller)-[:ELIGIBLE_FOR]->(program:Program {tenant_id: $tenant_id, name: $program_name})
+      MATCH (program)-[:CHARGES]->(fee:Fee {tenant_id: $tenant_id})
+      RETURN collect(DISTINCT seller.name) AS sellers, program.name AS program,
+        region.code AS region, fee.type AS fee_type, fee.amount AS fee_amount
+      LIMIT 100
+    result_description: Exact eligible seller set and applicable program fee.
+  - id: program_waiver
+    description: Resolve the governing policy and waiver condition for a program.
+    route: graph
+    examples:
+      - What waiver applies to Growth?
+      - Which policy governs Export and when is it waived?
+      - Explain the Premium waiver rule.
+      - Give the sustainable packaging exception for Export.
+      - What policy and exception control Premium?
+    parameters:
+      program_name:
+        type: string
+        candidates: {node_type: Program, property: name}
+    cypher: |
+      MATCH (program:Program {tenant_id: $tenant_id, name: $program_name})
+        -[:GOVERNED_BY]->(policy:Policy {tenant_id: $tenant_id})
+        -[:WAIVED_BY]->(rule:EligibilityRule {tenant_id: $tenant_id})
+      RETURN program.name AS program, policy.name AS policy, rule.condition AS waiver_condition
+      LIMIT 10
+    result_description: Governing policy and exact waiver condition.
+  - id: policy_explanation
+    description: Retrieve narrative seller-policy guidance.
+    route: vector
+    examples:
+      - Explain how seller eligibility should be evaluated.
+      - Summarize the seller program policy guide.
+      - Why should seller tier not determine a waiver?
+      - Describe the relationship between enrollment, regions, and fees.
+      - Give me the onboarding explanation for seller policies.
+      - Summarize narrative policy guidance for a new operator.
+      - Explain the documented seller-policy review process.
+    parameters: {}
+    result_description: Source-backed policy explanation.
+  - id: program_policy_context
+    description: Combine exact program fee and policy facts with narrative policy context.
+    route: hybrid
+    examples:
+      - What does Growth charge and why does the guide say tier alone is insufficient?
+      - Combine the Export fee with the narrative policy guidance.
+      - Show the Premium policy facts and explain the onboarding context.
+      - For Launch, return the exact fee and the guide's eligibility explanation.
+    parameters:
+      program_name:
+        type: string
+        candidates: {node_type: Program, property: name}
+    cypher: |
+      MATCH (program:Program {tenant_id: $tenant_id, name: $program_name})
+        -[:CHARGES]->(fee:Fee {tenant_id: $tenant_id})
+      MATCH (program)-[:GOVERNED_BY]->(policy:Policy {tenant_id: $tenant_id})
+      RETURN program.name AS program, fee.type AS fee_type, fee.amount AS fee_amount,
+        policy.name AS policy
+      LIMIT 10
+    result_description: Exact program facts plus cited narrative policy evidence.
+vector:
+  enabled: true
+  chunk_size: 900
+  chunk_overlap: 100
+  top_k: 5
+ui:
+  nodes:
+    Seller: {x: 80, y: 180}
+    Region: {x: 380, y: 40}
+    Program: {x: 380, y: 260}
+    Fee: {x: 720, y: 80}
+    Policy: {x: 720, y: 260}
+    EligibilityRule: {x: 1040, y: 260}

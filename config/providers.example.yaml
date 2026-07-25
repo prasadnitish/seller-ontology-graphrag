@@ -1,0 +1,17 @@
+profiles:
+  offline:
+    provider: rule
+    planner_model: deterministic-token-overlap
+    note: Safe routing preview only. It does not create publishable answer-quality evidence.
+  openai:
+    provider: openai
+    planner_model: gpt-5.6-luna
+    embedding_model: text-embedding-3-small
+    dimensions: 1536
+    credential_env: OPENAI_API_KEY
+  ollama:
+    provider: ollama
+    planner_model: qwen3:8b
+    embedding_model: nomic-embed-text
+    dimensions: 768
+    base_url: http://127.0.0.1:11434

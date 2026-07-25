@@ -1,0 +1,37 @@
+metadata:
+  name: Minimal Person Fixture
+  version: 1.0.0
+  tenant_id: fixture
+  description: Third-domain clean-room compiler fixture.
+sources:
+  - {id: people, path: people.json, format: json}
+  - {id: notes, path: notes.txt, format: text}
+node_types:
+  - name: Person
+    key: id
+    properties:
+      id: {type: string, required: true}
+      name: {type: string, required: true}
+relationship_types: []
+node_mappings:
+  - id: person_nodes
+    source: people
+    node_type: Person
+    key_field: person_id
+    properties: {id: person_id, name: name}
+relationship_mappings: []
+query_recipes:
+  - id: person_notes
+    description: Retrieve the narrative fixture notes.
+    route: vector
+    examples: ["Summarize the fixture notes."]
+    parameters: {}
+    result_description: Source-backed fixture summary.
+vector:
+  enabled: true
+  chunk_size: 900
+  chunk_overlap: 100
+  top_k: 3
+ui:
+  nodes:
+    Person: {x: 100, y: 100}

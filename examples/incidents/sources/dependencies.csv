@@ -1,0 +1,5 @@
+service_id,depends_on_id
+svc-checkout,svc-auth
+svc-checkout,svc-ledger
+svc-auth,svc-feature
+svc-notify,svc-auth

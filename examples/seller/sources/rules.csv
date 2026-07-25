@@ -1,0 +1,5 @@
+rule_id,condition
+r-1,annual sales above $100k
+r-2,first 90 days
+r-3,veteran-owned business
+r-4,sustainable packaging

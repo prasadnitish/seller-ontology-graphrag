@@ -1,0 +1,6 @@
+service_id,name,owner_team,tier
+svc-checkout,Checkout API,team-checkout,1
+svc-auth,Authentication Service,team-identity,1
+svc-ledger,Order Ledger,team-data,1
+svc-feature,Feature Flag Service,team-edge,2
+svc-notify,Notification Service,team-edge,2

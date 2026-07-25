@@ -1,0 +1,991 @@
+{
+  "graph_name": "Incident Dependency Graph",
+  "graph_version": "1.0.0",
+  "ontology_hash": "2d25ebdc4ba2dca864928218f61b176cbbf0a61838458feb6fd62677d715f1a0",
+  "data_hash": "ef347f6379b546e50e31ae8a294be7413d816ec865ae3639bc99b45f0346d87a",
+  "nodes": [
+    {
+      "id": "Team:team-checkout",
+      "type": "Team",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "team-checkout",
+        "name": "Checkout Platform"
+      },
+      "provenance": {
+        "source_id": "teams",
+        "source_path": "teams.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Team:team-identity",
+      "type": "Team",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "team-identity",
+        "name": "Identity Foundations"
+      },
+      "provenance": {
+        "source_id": "teams",
+        "source_path": "teams.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Team:team-data",
+      "type": "Team",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "team-data",
+        "name": "Data Reliability"
+      },
+      "provenance": {
+        "source_id": "teams",
+        "source_path": "teams.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Team:team-edge",
+      "type": "Team",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "team-edge",
+        "name": "Edge Infrastructure"
+      },
+      "provenance": {
+        "source_id": "teams",
+        "source_path": "teams.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Service:svc-checkout",
+      "type": "Service",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "svc-checkout",
+        "name": "Checkout API",
+        "tier": 1
+      },
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Service:svc-auth",
+      "type": "Service",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "svc-auth",
+        "name": "Authentication Service",
+        "tier": 1
+      },
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Service:svc-ledger",
+      "type": "Service",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "svc-ledger",
+        "name": "Order Ledger",
+        "tier": 1
+      },
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Service:svc-feature",
+      "type": "Service",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "svc-feature",
+        "name": "Feature Flag Service",
+        "tier": 2
+      },
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Service:svc-notify",
+      "type": "Service",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "svc-notify",
+        "name": "Notification Service",
+        "tier": 2
+      },
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Customer:cus-northstar",
+      "type": "Customer",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "cus-northstar",
+        "name": "Northstar Retail",
+        "segment": "enterprise"
+      },
+      "provenance": {
+        "source_id": "customers",
+        "source_path": "customers.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Customer:cus-cedar",
+      "type": "Customer",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "cus-cedar",
+        "name": "Cedar Marketplace",
+        "segment": "enterprise"
+      },
+      "provenance": {
+        "source_id": "customers",
+        "source_path": "customers.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Customer:cus-harbor",
+      "type": "Customer",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "cus-harbor",
+        "name": "Harbor Goods",
+        "segment": "mid-market"
+      },
+      "provenance": {
+        "source_id": "customers",
+        "source_path": "customers.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Customer:cus-kumo",
+      "type": "Customer",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "cus-kumo",
+        "name": "Kumo Direct",
+        "segment": "enterprise"
+      },
+      "provenance": {
+        "source_id": "customers",
+        "source_path": "customers.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Incident:INC-104",
+      "type": "Incident",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "INC-104",
+        "status": "open",
+        "severity": "SEV-1",
+        "started_at": "2026-07-21T16:32:00Z"
+      },
+      "provenance": {
+        "source_id": "incidents",
+        "source_path": "incidents.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Incident:INC-099",
+      "type": "Incident",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "INC-099",
+        "status": "resolved",
+        "severity": "SEV-2",
+        "started_at": "2026-07-12T09:15:00Z"
+      },
+      "provenance": {
+        "source_id": "incidents",
+        "source_path": "incidents.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Deployment:dep-401",
+      "type": "Deployment",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "dep-401",
+        "version": "2026.07.21.3",
+        "deployed_at": "2026-07-21T16:10:00Z"
+      },
+      "provenance": {
+        "source_id": "deployments",
+        "source_path": "deployments.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "Deployment:dep-388",
+      "type": "Deployment",
+      "tenant_id": "demo",
+      "properties": {
+        "id": "dep-388",
+        "version": "2026.07.12.1",
+        "deployed_at": "2026-07-12T08:42:00Z"
+      },
+      "provenance": {
+        "source_id": "deployments",
+        "source_path": "deployments.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "OWNED_BY:Service:svc-checkout:Team:team-checkout:1",
+      "type": "OWNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-checkout",
+      "to_id": "Team:team-checkout",
+      "properties": {},
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "OWNED_BY:Service:svc-auth:Team:team-identity:2",
+      "type": "OWNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-auth",
+      "to_id": "Team:team-identity",
+      "properties": {},
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "OWNED_BY:Service:svc-ledger:Team:team-data:3",
+      "type": "OWNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-ledger",
+      "to_id": "Team:team-data",
+      "properties": {},
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "OWNED_BY:Service:svc-feature:Team:team-edge:4",
+      "type": "OWNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-feature",
+      "to_id": "Team:team-edge",
+      "properties": {},
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "OWNED_BY:Service:svc-notify:Team:team-edge:5",
+      "type": "OWNED_BY",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-notify",
+      "to_id": "Team:team-edge",
+      "properties": {},
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "DEPENDS_ON:Service:svc-checkout:Service:svc-auth:1",
+      "type": "DEPENDS_ON",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-checkout",
+      "to_id": "Service:svc-auth",
+      "properties": {},
+      "provenance": {
+        "source_id": "dependencies",
+        "source_path": "dependencies.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "DEPENDS_ON:Service:svc-checkout:Service:svc-ledger:2",
+      "type": "DEPENDS_ON",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-checkout",
+      "to_id": "Service:svc-ledger",
+      "properties": {},
+      "provenance": {
+        "source_id": "dependencies",
+        "source_path": "dependencies.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "DEPENDS_ON:Service:svc-auth:Service:svc-feature:3",
+      "type": "DEPENDS_ON",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-auth",
+      "to_id": "Service:svc-feature",
+      "properties": {},
+      "provenance": {
+        "source_id": "dependencies",
+        "source_path": "dependencies.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "DEPENDS_ON:Service:svc-notify:Service:svc-auth:4",
+      "type": "DEPENDS_ON",
+      "tenant_id": "demo",
+      "from_id": "Service:svc-notify",
+      "to_id": "Service:svc-auth",
+      "properties": {},
+      "provenance": {
+        "source_id": "dependencies",
+        "source_path": "dependencies.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "USES:Customer:cus-northstar:Service:svc-checkout:1",
+      "type": "USES",
+      "tenant_id": "demo",
+      "from_id": "Customer:cus-northstar",
+      "to_id": "Service:svc-checkout",
+      "properties": {},
+      "provenance": {
+        "source_id": "usage",
+        "source_path": "usage.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "USES:Customer:cus-cedar:Service:svc-checkout:2",
+      "type": "USES",
+      "tenant_id": "demo",
+      "from_id": "Customer:cus-cedar",
+      "to_id": "Service:svc-checkout",
+      "properties": {},
+      "provenance": {
+        "source_id": "usage",
+        "source_path": "usage.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "USES:Customer:cus-harbor:Service:svc-notify:3",
+      "type": "USES",
+      "tenant_id": "demo",
+      "from_id": "Customer:cus-harbor",
+      "to_id": "Service:svc-notify",
+      "properties": {},
+      "provenance": {
+        "source_id": "usage",
+        "source_path": "usage.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "USES:Customer:cus-kumo:Service:svc-auth:4",
+      "type": "USES",
+      "tenant_id": "demo",
+      "from_id": "Customer:cus-kumo",
+      "to_id": "Service:svc-auth",
+      "properties": {},
+      "provenance": {
+        "source_id": "usage",
+        "source_path": "usage.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "IMPACTS:Incident:INC-104:Service:svc-auth:1",
+      "type": "IMPACTS",
+      "tenant_id": "demo",
+      "from_id": "Incident:INC-104",
+      "to_id": "Service:svc-auth",
+      "properties": {},
+      "provenance": {
+        "source_id": "incidents",
+        "source_path": "incidents.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "IMPACTS:Incident:INC-099:Service:svc-ledger:2",
+      "type": "IMPACTS",
+      "tenant_id": "demo",
+      "from_id": "Incident:INC-099",
+      "to_id": "Service:svc-ledger",
+      "properties": {},
+      "provenance": {
+        "source_id": "incidents",
+        "source_path": "incidents.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "DEPLOYS:Deployment:dep-401:Service:svc-auth:1",
+      "type": "DEPLOYS",
+      "tenant_id": "demo",
+      "from_id": "Deployment:dep-401",
+      "to_id": "Service:svc-auth",
+      "properties": {},
+      "provenance": {
+        "source_id": "deployments",
+        "source_path": "deployments.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "DEPLOYS:Deployment:dep-388:Service:svc-ledger:2",
+      "type": "DEPLOYS",
+      "tenant_id": "demo",
+      "from_id": "Deployment:dep-388",
+      "to_id": "Service:svc-ledger",
+      "properties": {},
+      "provenance": {
+        "source_id": "deployments",
+        "source_path": "deployments.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    }
+  ],
+  "corpus": [
+    {
+      "id": "chunk:Team:team-checkout",
+      "text": "Team id=team-checkout, name=Checkout Platform.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "teams",
+        "source_path": "teams.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Team:team-identity",
+      "text": "Team id=team-identity, name=Identity Foundations.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "teams",
+        "source_path": "teams.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Team:team-data",
+      "text": "Team id=team-data, name=Data Reliability.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "teams",
+        "source_path": "teams.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Team:team-edge",
+      "text": "Team id=team-edge, name=Edge Infrastructure.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "teams",
+        "source_path": "teams.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Service:svc-checkout",
+      "text": "Service id=svc-checkout, name=Checkout API, tier=1.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Service:svc-auth",
+      "text": "Service id=svc-auth, name=Authentication Service, tier=1.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Service:svc-ledger",
+      "text": "Service id=svc-ledger, name=Order Ledger, tier=1.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Service:svc-feature",
+      "text": "Service id=svc-feature, name=Feature Flag Service, tier=2.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Service:svc-notify",
+      "text": "Service id=svc-notify, name=Notification Service, tier=2.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Customer:cus-northstar",
+      "text": "Customer id=cus-northstar, name=Northstar Retail, segment=enterprise.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "customers",
+        "source_path": "customers.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Customer:cus-cedar",
+      "text": "Customer id=cus-cedar, name=Cedar Marketplace, segment=enterprise.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "customers",
+        "source_path": "customers.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Customer:cus-harbor",
+      "text": "Customer id=cus-harbor, name=Harbor Goods, segment=mid-market.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "customers",
+        "source_path": "customers.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Customer:cus-kumo",
+      "text": "Customer id=cus-kumo, name=Kumo Direct, segment=enterprise.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "customers",
+        "source_path": "customers.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Incident:INC-104",
+      "text": "Incident id=INC-104, status=open, severity=SEV-1, started_at=2026-07-21T16:32:00Z.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "incidents",
+        "source_path": "incidents.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Incident:INC-099",
+      "text": "Incident id=INC-099, status=resolved, severity=SEV-2, started_at=2026-07-12T09:15:00Z.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "incidents",
+        "source_path": "incidents.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Deployment:dep-401",
+      "text": "Deployment id=dep-401, version=2026.07.21.3, deployed_at=2026-07-21T16:10:00Z.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "deployments",
+        "source_path": "deployments.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:Deployment:dep-388",
+      "text": "Deployment id=dep-388, version=2026.07.12.1, deployed_at=2026-07-12T08:42:00Z.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "deployments",
+        "source_path": "deployments.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:OWNED_BY:Service:svc-checkout:Team:team-checkout:1",
+      "text": "Service:svc-checkout OWNED_BY Team:team-checkout.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:OWNED_BY:Service:svc-auth:Team:team-identity:2",
+      "text": "Service:svc-auth OWNED_BY Team:team-identity.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:OWNED_BY:Service:svc-ledger:Team:team-data:3",
+      "text": "Service:svc-ledger OWNED_BY Team:team-data.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:OWNED_BY:Service:svc-feature:Team:team-edge:4",
+      "text": "Service:svc-feature OWNED_BY Team:team-edge.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:OWNED_BY:Service:svc-notify:Team:team-edge:5",
+      "text": "Service:svc-notify OWNED_BY Team:team-edge.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "services",
+        "source_path": "services.csv",
+        "locator": "row:5",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:DEPENDS_ON:Service:svc-checkout:Service:svc-auth:1",
+      "text": "Service:svc-checkout DEPENDS_ON Service:svc-auth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "dependencies",
+        "source_path": "dependencies.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:DEPENDS_ON:Service:svc-checkout:Service:svc-ledger:2",
+      "text": "Service:svc-checkout DEPENDS_ON Service:svc-ledger.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "dependencies",
+        "source_path": "dependencies.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:DEPENDS_ON:Service:svc-auth:Service:svc-feature:3",
+      "text": "Service:svc-auth DEPENDS_ON Service:svc-feature.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "dependencies",
+        "source_path": "dependencies.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:DEPENDS_ON:Service:svc-notify:Service:svc-auth:4",
+      "text": "Service:svc-notify DEPENDS_ON Service:svc-auth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "dependencies",
+        "source_path": "dependencies.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:USES:Customer:cus-northstar:Service:svc-checkout:1",
+      "text": "Customer:cus-northstar USES Service:svc-checkout.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "usage",
+        "source_path": "usage.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:USES:Customer:cus-cedar:Service:svc-checkout:2",
+      "text": "Customer:cus-cedar USES Service:svc-checkout.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "usage",
+        "source_path": "usage.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:USES:Customer:cus-harbor:Service:svc-notify:3",
+      "text": "Customer:cus-harbor USES Service:svc-notify.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "usage",
+        "source_path": "usage.csv",
+        "locator": "row:3",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:USES:Customer:cus-kumo:Service:svc-auth:4",
+      "text": "Customer:cus-kumo USES Service:svc-auth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "usage",
+        "source_path": "usage.csv",
+        "locator": "row:4",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:IMPACTS:Incident:INC-104:Service:svc-auth:1",
+      "text": "Incident:INC-104 IMPACTS Service:svc-auth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "incidents",
+        "source_path": "incidents.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:IMPACTS:Incident:INC-099:Service:svc-ledger:2",
+      "text": "Incident:INC-099 IMPACTS Service:svc-ledger.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "incidents",
+        "source_path": "incidents.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:DEPLOYS:Deployment:dep-401:Service:svc-auth:1",
+      "text": "Deployment:dep-401 DEPLOYS Service:svc-auth.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "deployments",
+        "source_path": "deployments.csv",
+        "locator": "row:1",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:DEPLOYS:Deployment:dep-388:Service:svc-ledger:2",
+      "text": "Deployment:dep-388 DEPLOYS Service:svc-ledger.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "deployments",
+        "source_path": "deployments.csv",
+        "locator": "row:2",
+        "quote": null,
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:runbook:1",
+      "text": "# Authentication service incident runbook\n\nIf authentication errors rise after a feature configuration deployment, disable the new flag,\nverify token issuance in two regions, and confirm checkout recovery before closing the incident.\n\nEscalate to Identity Foundations when token issuance fails. Edge Infrastructure owns the feature\nflag dependency and must confirm propagation state.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "runbook",
+        "source_path": "runbook.md",
+        "locator": "chars:0-383",
+        "quote": "# Authentication service incident runbook\n\nIf authentication errors rise after a feature configuration deployment, disable the new flag,\nverify token issuance in two regions, and confirm checkout recovery before closing the incident.\n\nEscalate to Identity Foundations when token issuance fails. Edge Infrastructure owns the feature\nflag dependency and must confirm propagation state.",
+        "confidence": null
+      }
+    },
+    {
+      "id": "chunk:postmortem:1",
+      "text": "# INC-099 order ledger postmortem\n\nThe Order Ledger experienced elevated write latency after an index migration. Checkout requests\nremained available, but order confirmation events were delayed for eleven minutes.\n\nThe team paused the migration, restored the prior index, drained the event backlog, and added a\npre-deployment query-plan comparison to the release checklist. No customer data was lost.",
+      "tenant_id": "demo",
+      "provenance": {
+        "source_id": "postmortem",
+        "source_path": "postmortem.md",
+        "locator": "chars:0-400",
+        "quote": "# INC-099 order ledger postmortem\n\nThe Order Ledger experienced elevated write latency after an index migration. Checkout requests\nremained available, but order confirmation events were delayed for eleven minutes.\n\nThe team paused the migration, restored the prior index, drained the event backlog, and added a\npre-deployment query-plan comparison to the release checklist. No customer data was lost.",
+        "confidence": null
+      }
+    }
+  ],
+  "counts": {
+    "nodes": 17,
+    "relationships": 17,
+    "chunks": 36
+  }
+}

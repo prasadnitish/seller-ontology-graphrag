@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "graphrag-ontology-workbench"
+version = "0.2.0"
+description = "Local-first ontology compiler and governed GraphRAG workbench"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+license = { file = "LICENSE" }
+authors = [{ name = "Nitish Prasad" }]
+dependencies = [
+  "fastapi>=0.116,<1",
+  "httpx>=0.28,<1",
+  "neo4j>=5.28,<7",
+  "pydantic>=2.11,<3",
+  "pyyaml>=6.0,<7",
+  "typer>=0.16,<1",
+  "uvicorn>=0.35,<1",
+]
+
+[project.optional-dependencies]
+openai = ["openai>=1.101,<3", "neo4j-graphrag[openai]>=1.9,<2"]
+providers = [
+  "openai>=1.101,<3",
+  "neo4j-graphrag[openai,ollama]>=1.9,<2",
+]
+dev = [
+  "pytest>=8.4,<9",
+  "pytest-asyncio>=1.1,<2",
+  "pytest-cov>=6.2,<8",
+  "ruff>=0.12,<1",
+]
+
+[project.scripts]
+graphkit = "graphkit.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["graphkit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+markers = ["integration: requires an ephemeral Neo4j service"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"graphkit/cli.py" = ["B008"]
+"tests/*" = ["S106", "S603"]
