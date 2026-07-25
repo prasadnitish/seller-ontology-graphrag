@@ -8,10 +8,6 @@ questions without handing an LLM unrestricted database access. A coding agent ca
 ontology and mappings, but a person approves the exact contract before anything is written to
 Neo4j.
 
-The original seller demo is preserved at the `v0.1-prototype` tag. This branch replaces its
-fixed questions, simulated comparison, and hard-coded scores with a reusable compiler and
-reproducible evidence. See the [V0.1 migration guide](docs/migration-v0.1.md).
-
 ![GraphRAG Ontology Workbench showing source profiling and the live ontology canvas](docs/assets/workbench.png)
 
 > Current evidence boundary: the committed offline suite validates source coverage, compilation,
@@ -31,7 +27,7 @@ reproducible evidence. See the [V0.1 migration guide](docs/migration-v0.1.md).
 | “Run whatever Cypher the model invents” | Do not deploy this | The workbench intentionally rejects unrestricted Text2Cypher. |
 
 GraphRAG earns its complexity when the important answer depends on paths, exclusions, ownership,
-or multi-hop relationships—and when those relationships can be governed. Otherwise, vector RAG
+or multi-hop relationships and those relationships can be governed. Otherwise, vector RAG
 is usually the better default.
 
 ## Ten-minute quick start

@@ -5,8 +5,7 @@ data, or exploit payloads in a public issue.
 
 ## Supported surface
 
-The current supported surface is the latest default branch. The `v0.1-prototype` tag is retained
-for history and is not supported for deployment.
+The current supported surface is the latest default branch.
 
 ## Deployment checklist
 

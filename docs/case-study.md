@@ -1,18 +1,13 @@
-# GraphRAG Ontology Workbench: from fixed demo to falsifiable product
+# GraphRAG Ontology Workbench: governed conversion and measurable retrieval
 
 ## Executive conclusion
-
-The first seller-ontology demo illustrated a useful architecture, but it did not prove that
-GraphRAG improved an answer. Its questions were fixed, outputs were predetermined, Cypher was
-shown without being the source of the response, and comparison scores were simulated. The
-rebuild turns that critique into the product.
 
 GraphRAG Ontology Workbench profiles CSV, JSON, Markdown, and text; gives coding agents one
 schema-backed proposal task; requires human review; compiles an approved, provider-independent
 graph; loads Neo4j idempotently; routes free text only through approved recipes; and produces
 case-level evidence.
 
-The measured conclusion is deliberately narrow:
+The current release establishes:
 
 - Both example workspaces map 100% of structured fields or explicitly ignore them.
 - The incident workspace compiles 17 nodes, 17 relationships, and 36 corpus chunks.
@@ -25,26 +20,24 @@ GraphRAG is justified when an answer depends on governed multi-hop structure. Ve
 the default for document summary and explanation. Hybrid retrieval is useful only when both are
 needed.
 
-## 1. Original problem and prototype critique
+## 1. Product problem
 
-The original prototype had a sensible ontology: sellers, programs, policies, fees, eligibility
-rules, and regions. It also included tenant-aware Cypher and a trace-shaped UI. Those ideas were
-worth preserving.
+Technical product teams hold operational knowledge across CSV exports, JSON records,
+policies, runbooks, and postmortems. Relationship questions cut across those sources. A customer
+impact answer may require a service dependency path, the affected deployment, and the team that
+owns the nearest failure.
 
-The problem was the evidence path.
+The team needs a repeatable way to make five decisions:
 
-1. A fixed question led to a fixed answer, so the interface could not demonstrate general
-   retrieval behavior.
-2. The page displayed Cypher, but the response was not proven to come from executing it.
-3. The vector baseline was deterministic simulation rather than retrieval from the same source.
-4. Scores were presented without a reference-answer artifact and reproducible judge inputs.
-5. One curated seller dataset could not demonstrate that the conversion method generalized.
+1. Which source fields and text sections carry useful evidence?
+2. Which entities, keys, properties, and relationships belong in the ontology?
+3. How does each source field map into that ontology?
+4. Which free-text questions may execute bounded database queries?
+5. Does graph retrieval improve the held-out use case enough to justify its cost?
 
-The prototype therefore showed “what a GraphRAG system might look like,” not “when this system
-earns its complexity.”
-
-The workbench preserves the ontology discipline, bounded queries, provenance, and tenant
-boundaries. It removes every hard-coded quality claim.
+The workbench records those decisions in one reviewed GraphSpec. It compiles the same contract
+into graph data, vector chunks, query recipes, and evaluation artifacts. Product teams can inspect
+the path from a source row or source span to a returned answer.
 
 ![The local workbench showing hashed sources, the approved ontology, and its evidence chain](assets/workbench.png)
 
